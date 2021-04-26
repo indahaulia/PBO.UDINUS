@@ -28,10 +28,7 @@ class compare{
         }
     
         for (int i = 0 ; i<b.length(); i++){
-            if(Character.toString(a.charAt(i)).equals("-")){
-                validitas = "tidak valid";
-                break;
-            }
+            
             if (Character.toString (b.charAt(i)).equals("1"))
                 {
                 if (Character.toString (b.charAt(i)).equals(stack.pop()))
@@ -57,9 +54,9 @@ class compare{
 public class perbandingan {
     public static void main(String[] args){
         String data = "";
-        Scanner keyboard = new Scanner(System.in);
+        Scanner inputan = new Scanner(System.in);
         System.out.print("Input Data = ");
-        data = keyboard.nextLine();
+        data = inputan.nextLine();
         compare c = new compare();
         c.insertdata(data);
         System.out.println("Hasil = "+ c.comparedata());
