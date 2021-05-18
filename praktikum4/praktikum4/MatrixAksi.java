@@ -1,4 +1,4 @@
-package pratikum4;
+package praktikum4;
 
 public class MatrixAksi {
     public static void main(String[] args) {

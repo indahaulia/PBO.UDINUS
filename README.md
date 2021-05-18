@@ -1,2 +1,0 @@
-# PBO.UDINUS
-Kumpulan Tugas

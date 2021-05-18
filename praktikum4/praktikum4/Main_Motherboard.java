@@ -1,4 +1,4 @@
-package pratikum4;
+package praktikum4;
 
 import java.util.Scanner;
 
@@ -21,5 +21,6 @@ public class Main_Motherboard {
         MotherBoard.USB usb = new MotherBoard.USB();
         int totalUsb = usb.getTotalPorts(usb2, usb3);
         System.out.println("Total Ports = " + totalUsb);
+        scan.close();
     }
 }
