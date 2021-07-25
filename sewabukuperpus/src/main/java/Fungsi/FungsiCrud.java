@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package FungsiCrud;
+package Fungsi;
 import Koneksi.Koneksi;
 import Model.TableVariable;
 import java.sql.Connection;
@@ -22,19 +22,19 @@ import java.util.Date;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import InterfaceTable.InterfaceSewaBuku;
+import InterfaceTabel.InterfaceSewaBuku;
 
 /**
  *
- * @author IndahAulia
+ * @author Dinozera
  */
-public class CrudSewaBuku implements InterfaceSewaBuku{
+public class FungsiCrud implements InterfaceSewaBuku{
      Connection con = Koneksi.GetConnection();
      
     @Override
     public List<TableVariable> GetAll() {
-        SimpleDateFormat format_waktu = new SimpleDateFormat("dd MMMM yyyy");
-        List<TableVariable> list_sewaBuku = null ;
+       SimpleDateFormat format_waktu = new SimpleDateFormat("dd MMMM yyyy");
+       List<TableVariable> list_sewaBuku = null ;
      try{
          list_sewaBuku = new ArrayList<TableVariable>();
          Statement st = con.createStatement();
@@ -73,7 +73,7 @@ public class CrudSewaBuku implements InterfaceSewaBuku{
      catch(SQLException e){
          System.out.println("Error");
      }   catch (ParseException ex) {
-             Logger.getLogger(CrudSewaBuku.class.getName()).log(Level.SEVERE, null, ex);
+             Logger.getLogger(FungsiCrud.class.getName()).log(Level.SEVERE, null, ex);
          }
     return list_sewaBuku;
     }
@@ -177,8 +177,8 @@ String query_updateData = "UPDATE sewabuku SET judul = ? WHERE id = ?";
      public void KembalikanBuku(int id) throws ParseException{
          long denda = 2000;
          String _harusKembali = GetTanggalHarusKembali(id);
-         Date harusKembali =new SimpleDateFormat("yyyy-MM-dddd").parse(_harusKembali);
-        Date kembali = new Date();
+             Date harusKembali =new SimpleDateFormat("yyyy-MM-dddd").parse(_harusKembali);
+    Date kembali = new Date();
      
     
       if(kembali.after(harusKembali)){
